@@ -5,8 +5,11 @@
     position:absolute;
 }
 
+.expanded .list-item::before, .expanded .list-item::before {
+    left:3px!important;
+}
+
 .tree-view {
-  // font-family: 'Inconsolata-g for Powerline';
   & .tree-view-root {
       padding-left: 0px;
       padding-right: 0px;
@@ -17,14 +20,26 @@
         color: @dark-white;
         position: relative;
 
+        .selected {
+            &:before {
+                margin-left:4px;
+            }
+        }
+
+        .icon-file-directory &:before {
+            top:0;
+            left:5px
+        }
+
         &:before {
           content: '';
           position: absolute;
+          // margin-left:4px;
           min-width: 1px;
           display: block;
           top: 0;
           bottom: 0;
-          left: 5px;
+          left: 0.5em;
           background: @dark-background;
         }
     }
@@ -40,7 +55,7 @@
       position: relative;
       font-size: 4px;
       float: left;
-      top: 1px;
+      top: 0;
       left: -12.5px;
       width: 6px;
       margin-right: -8px;
