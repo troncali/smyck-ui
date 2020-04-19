@@ -10,7 +10,7 @@ apm install smyck-ui
 ## Screenshots
 
 ### Editing
-![Editing](https://raw.githubusercontent.com/troncali/smyck-subtle-syntax/master/shots/js.jpeg)
+![Editing](https://raw.githubusercontent.com/troncali/smyck-ui/master/shots/editing.png)
 
 ### Syntax Theme
 
