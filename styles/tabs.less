@@ -19,143 +19,140 @@
 }
 
 .tab-bar {
-  position: relative;
-  background: @dark-background;
-  overflow-x: auto;
-  overflow-y: hidden;
-  // animation: none;
-  // transform: none;
-  // transition: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  &:empty {
-    display: none;
-  }
-
-  // Tab ----------------------
-
-  .tab {
     position: relative;
-    padding: 0;
-    margin-right: 1em;
-    height: inherit;
-    font-size: inherit;
-    line-height: @tab-height;
-    color: @black;
-    background-color: @dark-background;
-    min-width: @tab-width;
-    max-width: @tab-width;
+    background: @dark-background;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &:empty {
+        display: none;
+    }
+
+    // Tab ----------------------
+
+    .tab {
+        position: relative;
+        padding: 0;
+        margin-right: 1em;
+        height: inherit;
+        font-size: inherit;
+        line-height: @tab-height;
+        color: @black;
+        background-color: @dark-background;
+        min-width: @tab-width;
+        max-width: @tab-width;
 
     .title {
         margin-right:1.5em;
     }
 
-    // transtion: none;
-    // animation: none;
-    // transform: none;
-
-    // transition-delay: 0s;
-    // transition-timing-function: linear;
-    // // transition: background 1s, max-width 1s, min-width 1s, left 1s, right 1s, width 1s;
-
     &:after {
-      position: absolute;
-      top:0px;
-      left: @tab-width - 3px;
-      font-size: 2.6em;
-      color: @black;
-      font-family: "NerdFontsSymbols Nerd Font";
-      transform:scale(0.75,1.2);
-      content: "\e0b1";
-      // left: @tab-width;
-      // font-size: 1.7em;
-      // color: @black;
-      // content: "";
+        position: absolute;
+        top:0px;
+        left: @tab-width - 3px;
+        font-size: 2.6em;
+        color: @black;
+        font-family: "NerdFontsSymbols Nerd Font";
+        transform:scale(0.75,1.2);
+        content: "\e0b1";
+        // left: @tab-width;
+        // font-size: 1.7em;
+        // color: @black;
+        // content: "";
     }
 
     &.active {
-      position: relative;
-      left: -12px;
-      min-width: @tab-width + 14px;
-      max-width: @tab-width + 14px;
-      width: @tab-width + 14px;
-      color: @white;
-      background-color: @black;
-      .title {
-          margin-right:.7em;
-      }
-      .title.title:before {
-        margin-left: 2em;
-        margin-right: 0.3em;
-      }
-      &:after {
-          position: absolute;
-          color: @black;
-          left: @tab-width + 12px;
-          font-size: 2.6em;
-          font-family: "NerdFontsSymbols Nerd Font";
-          transform:scale(0.75,1.2);
-          content: "\e0b0";
-          // top: 0px;
-          // left: @tab-width + 12px;
-          // color: @black;
-          // content: "";
-      }
-      &:before {
-        position: absolute;
-        // top:1px;
-        left:-3px;
-        font-size: 2.6em;
-        color: @dark-background;
-        font-family: "NerdFontsSymbols Nerd Font";
-        transform:scale(0.75,1.2);
-        content: "\e0b0";
-        // font-size:1.7em;
-        // content: "";
-      }
+        position: relative;
+        left: -12px;
+        min-width: @tab-width + 14px;
+        max-width: @tab-width + 14px;
+        width: @tab-width + 14px;
+        color: @white;
+        background-color: @black;
+
+        .title {
+            margin-right:.7em;
+        }
+
+        .title.title:before {
+            margin-left: 2em;
+            margin-right: 0.3em;
+        }
+
+        &:after {
+            position: absolute;
+            color: @black;
+            left: @tab-width + 12px;
+            font-size: 2.6em;
+            font-family: "NerdFontsSymbols Nerd Font";
+            transform:scale(0.75,1.2);
+            content: "\e0b0";
+            // top: 0px;
+            // left: @tab-width + 12px;
+            // color: @black;
+            // content: "";
+        }
+
+        &:before {
+            position: absolute;
+            // top:1px;
+            left:-3px;
+            font-size: 2.6em;
+            color: @dark-background;
+            font-family: "NerdFontsSymbols Nerd Font";
+            transform:scale(0.75,1.2);
+            content: "\e0b0";
+            // font-size:1.7em;
+            // content: "";
+        }
     }
 
     &:first-of-type {
         min-width: @tab-width + 12;
         max-width: @tab-width + 12;
         width: @tab-width + 12;
+
         &:after {
-          position: absolute;
-          // left: @tab-width + 12;
-          // color: @black;
-          // content: "";
-          left: @tab-width + 9;
-          font-size: 2.6em;
-          color: @black;
-          font-family: "NerdFontsSymbols Nerd Font";
-          transform:scale(0.75,1.2);
-          content: "\e0b1";
+            position: absolute;
+            // left: @tab-width + 12;
+            // color: @black;
+            // content: "";
+            left: @tab-width + 9;
+            font-size: 2.6em;
+            color: @black;
+            font-family: "NerdFontsSymbols Nerd Font";
+            transform:scale(0.75,1.2);
+            content: "\e0b1";
         }
+
         &:before {
-          position: absolute;
-          color: @green;
-          left:-2px;
-          font-size: 2.6em;
-          font-family: "NerdFontsSymbols Nerd Font";
-          transform:scale(0.75,1.2);
-          content: "\e0b0";
-          // top:-2px;
-          // left:-1px;
-          // font-size: 3em;
-          // font-family: "Octicons Regular";
-          // content: "\f05a";
-          // font-size: 1.7em;
-          // content: "";
+            position: absolute;
+            color: @green;
+            left:-2px;
+            font-size: 2.6em;
+            font-family: "NerdFontsSymbols Nerd Font";
+            transform:scale(0.75,1.2);
+            content: "\e0b0";
+            // top:-2px;
+            // left:-1px;
+            // font-size: 3em;
+            // font-family: "Octicons Regular";
+            // content: "\f05a";
+            // font-size: 1.7em;
+            // content: "";
         }
+
         &.active {
             position:relative;
             left:0;
             min-width: @tab-width + 12;
             max-width: @tab-width + 12;
             width: @tab-width + 12;
+
             &:after {
                 left: @tab-width + 10;
                 color: @black;
@@ -165,9 +162,10 @@
                 content: "\e0b0";
             }
         }
+
         .title.title:before {
-          margin-left: 2em;
-          margin-right: 0.5em;
+            margin-left: 2em;
+            margin-right: 0.5em;
         }
     }
     // &:last-of-type {
@@ -190,9 +188,9 @@
     // Icons ----------------------
 
     .title.title:before {
-      margin-left: 1em;
-      margin-right: 0.3em;
-      font-size: 1.1em;
+        margin-left: 1em;
+        margin-right: 0.3em;
+        font-size: 1.1em;
     }
 
     // Close icon ----------------------
@@ -201,6 +199,12 @@
         top:0px;
         right:0px;
     }
+
+    &.modified:not(:hover) .close-icon {
+        top:.7em;
+        right:.3em;
+    }
+
     // .close-icon {
     //   // top: @icon-padding-top;
     //   // right: @icon-padding-right;
