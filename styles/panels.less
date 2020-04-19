@@ -3,6 +3,17 @@
     background-color: @dark-background;
 }
 
+// TODO: Better way to style and reduce width of gutter but still keep
+// collapseable line numbers?
+
+// TODO: split package styling into separate folder/files.
+
 .gutter[gutter-name="linter-ui-default"] {
-    left:-15px;
+    .linter-row {
+        width:8px!important;
+    }
+
+    .icon::before {
+        top:1px;
+    }
 }
