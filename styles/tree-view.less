@@ -11,6 +11,41 @@
       padding-left: 0px;
       padding-right: 0px;
   }
+
+    // Line to left of tree items
+    .list-item + .list-tree {
+        color: @dark-white;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          min-width: 1px;
+          display: block;
+          top: 0;
+          bottom: 0;
+          left: 5px;
+          background: @dark-background;
+        }
+    }
+
+    // Dots to left of tree items
+    .list-item.file.entry {
+    transition: .2s ease-in;
+
+    &:after {
+      opacity: .26;
+      font-family: "Octicons Regular";
+      content: "\f052";
+      position: relative;
+      font-size: 4px;
+      float: left;
+      top: 1px;
+      left: -12.5px;
+      width: 6px;
+      margin-right: -8px;
+    }
+}
 }
 
 .project-root-header {
