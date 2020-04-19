@@ -1,5 +1,16 @@
 // Tabs
 
+// TODO: Fix animation issue
+// TODO: Set up preferences to use powerline extra symbols in Nerd Font?
+// TODO: Better source URL for Nerd Font?
+
+@font-face {
+    font-family: 'NerdFontsSymbols Nerd Font';
+    src: url("https://www.nerdfonts.com/assets/fonts/Symbols-2048-em%20Nerd%20Font%20Complete.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
 // Hide Project tab
 .tab {
     &[data-type="TreeView"] {
@@ -7,15 +18,14 @@
     }
 }
 
-
 .tab-bar {
   position: relative;
   background: @dark-background;
   overflow-x: auto;
   overflow-y: hidden;
-  animation: none;
-  transform: none;
-  transition: none;
+  // animation: none;
+  // transform: none;
+  // transition: none;
 
   &::-webkit-scrollbar {
     display: none;
@@ -39,9 +49,13 @@
     min-width: @tab-width;
     max-width: @tab-width;
 
-    transtion: none;
-    animation: none;
-    transform: none;
+    .title {
+        margin-right:1.5em;
+    }
+
+    // transtion: none;
+    // animation: none;
+    // transform: none;
 
     // transition-delay: 0s;
     // transition-timing-function: linear;
@@ -64,9 +78,12 @@
       width: @tab-width + 12px;
       color: @white;
       background-color: @black;
+      .title {
+          margin-right:.7em;
+      }
       .title.title:before {
         margin-left: 2em;
-        margin-right: 0.5em;
+        margin-right: 0.3em;
       }
       &:after {
           position: absolute;
@@ -77,14 +94,15 @@
       }
       &:before {
         position: absolute;
-        //top:-2px;
-        //left:-1px;
-        //font-size: 2.8em;
-        font-size:1.7em;
+        // top:1px;
+        left:-3px;
+        font-size: 2.6em;
         color: @dark-background;
-        // font-family: "Octicons Regular";
-        // content: "\f05a";
-        content: "";
+        font-family: "NerdFontsSymbols Nerd Font";
+        transform:scale(0.75,1.2);
+        content: "\e0b0";
+        // font-size:1.7em;
+        // content: "";
       }
     }
 
@@ -94,15 +112,31 @@
         width: @tab-width + 12;
         &:after {
           position: absolute;
-          left: @tab-width + 12;
+          // left: @tab-width + 12;
+          // color: @black;
+          // content: "";
+          left: @tab-width + 9;
+          font-size: 2.6em;
           color: @black;
-          content: "";
+          font-family: "NerdFontsSymbols Nerd Font";
+          transform:scale(0.75,1.2);
+          content: "\e0b1";
         }
         &:before {
           position: absolute;
-          font-size: 1.7em;
           color: @green;
-          content: "";
+          left:-2px;
+          font-size: 2.6em;
+          font-family: "NerdFontsSymbols Nerd Font";
+          transform:scale(0.75,1.2);
+          content: "\e0b0";
+          // top:-2px;
+          // left:-1px;
+          // font-size: 3em;
+          // font-family: "Octicons Regular";
+          // content: "\f05a";
+          // font-size: 1.7em;
+          // content: "";
         }
         &.active {
             position:relative;
@@ -111,9 +145,12 @@
             max-width: @tab-width + 12;
             width: @tab-width + 12;
             &:after {
-                left: @tab-width + 12;
+                left: @tab-width + 10;
                 color: @black;
-                content: "";
+                font-size: 2.6em;
+                font-family: "NerdFontsSymbols Nerd Font";
+                transform:scale(0.75,1.2);
+                content: "\e0b0";
             }
         }
         .title.title:before {
@@ -214,7 +251,6 @@
   //     }
   //   }
   }
-
 
   // Tabs in the docks ----------------------
 
