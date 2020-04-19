@@ -62,20 +62,26 @@
     // // transition: background 1s, max-width 1s, min-width 1s, left 1s, right 1s, width 1s;
 
     &:after {
-      position: absolute; // TODO: does relative help transition issue?
+      position: absolute;
       top:0px;
-      left: @tab-width;
-      font-size: 1.7em;
+      left: @tab-width - 3px;
+      font-size: 2.6em;
       color: @black;
-      content: "";
+      font-family: "NerdFontsSymbols Nerd Font";
+      transform:scale(0.75,1.2);
+      content: "\e0b1";
+      // left: @tab-width;
+      // font-size: 1.7em;
+      // color: @black;
+      // content: "";
     }
 
     &.active {
       position: relative;
       left: -12px;
-      min-width: @tab-width + 12px;
-      max-width: @tab-width + 12px;
-      width: @tab-width + 12px;
+      min-width: @tab-width + 14px;
+      max-width: @tab-width + 14px;
+      width: @tab-width + 14px;
       color: @white;
       background-color: @black;
       .title {
