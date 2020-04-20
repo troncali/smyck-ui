@@ -6,6 +6,10 @@ Initial release and work in progress.  Not yet polished for all interface elemen
 
 Feedback, suggestions, problems welcome: [create a new issue](https://github.com/troncali/smyck-ui/issues/new).
 
+#### v0.2.0 Changelog
+* Fixed tab divider and close icon issues; restructured for variable-width tabs.
+* Minor tweaks to git and linter gutter styles.
+
 ## Installation
 ```bash
 apm install smyck-ui
