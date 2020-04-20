@@ -2,44 +2,50 @@
 
 // TODO: Fix animation issue
 // TODO: Set up preferences to use powerline extra symbols in Nerd Font?
-// TODO: Better source URL for Nerd Font?
 
-@font-face {
-    font-family: 'NerdFontsSymbols Nerd Font';
-    src: url("https://www.nerdfonts.com/assets/fonts/Symbols-2048-em%20Nerd%20Font%20Complete.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-
-// Hide Project tab
+// Hide Project tab -----------------------------------------------------------
 .tab {
     &[data-type="TreeView"] {
         display: none;
     }
 }
 
+// Project-root divider -------------------------------------------------------
+.left .atom-dock-mask {
+    overflow: visible;
+    &:after {
+        position: relative;
+        display:inline-block;
+        z-index: 1;
+        left:100%;
+        color: @green;
+        font-family: @nf-font;
+        font-size: @nf-arrow-size;
+        transform: @nf-arrow-scale translateX(-0.25rem) translateY(-.65rem);
+        content: @nf-right-arrow-solid;
+    }
+}
+
+// Tab Bar --------------------------------------------------------------------
+
 .tab-bar {
-    position: relative;
+    // position: relative;  // TODO: REMOVE
     background: @dark-background;
     overflow-x: auto;
     overflow-y: hidden;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
 
     &:empty {
         display: none;
     }
 
-    // Tab ----------------------
+    // Tab ---------------------- ---------------------------------------------
 
     .tab {
         position: relative;
         padding: 0;
         margin-right: 1em;
-        height: inherit;
-        font-size: inherit;
+        // height: inherit; // TODO: REMOVE
+        font-size: 1rem;
         line-height: @tab-height;
         color: @black;
         background-color: @dark-background;
@@ -56,7 +62,7 @@
         left: @tab-width - 3px;
         font-size: 2.6em;
         color: @black;
-        font-family: "NerdFontsSymbols Nerd Font";
+        font-family: @nf-font;
         transform:scale(0.75,1.2);
         content: "\e0b1";
         // left: @tab-width;
@@ -129,22 +135,22 @@
             content: "\e0b1";
         }
 
-        &:before {
-            position: absolute;
-            color: @green;
-            left:-2px;
-            font-size: 2.6em;
-            font-family: "NerdFontsSymbols Nerd Font";
-            transform:scale(0.75,1.2);
-            content: "\e0b0";
-            // top:-2px;
-            // left:-1px;
-            // font-size: 3em;
-            // font-family: "Octicons Regular";
-            // content: "\f05a";
-            // font-size: 1.7em;
-            // content: "";
-        }
+        // &:before {
+        //     position: absolute;
+        //     color: @green;
+        //     left:-2px;
+        //     font-size: 2.6em;
+        //     font-family: "NerdFontsSymbols Nerd Font";
+        //     transform:scale(0.75,1.2);
+        //     content: "\e0b0";
+        //     // top:-2px;
+        //     // left:-1px;
+        //     // font-size: 3em;
+        //     // font-family: "Octicons Regular";
+        //     // content: "\f05a";
+        //     // font-size: 1.7em;
+        //     // content: "";
+        // }
 
         &.active {
             position:relative;

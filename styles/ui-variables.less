@@ -1,5 +1,7 @@
 @import "colors";
 
+@font-family: 'Inconsolata-g for Powerline', Menlo, Consolas;
+
 // Text Colors
 @text-color:           @dark-white;
 @text-color-subtle:    @black;
@@ -66,8 +68,9 @@
 @ui-site-color-5: @dark-magenta; // yellow
 
 // Sizes
-@font-size: 12px;
-@input-font-size: 14px;
+// Use rem units, relative to font-size of root html element (12px).
+@font-size: .75rem; // 12px (.75 of standard 16px)
+@input-font-size: 1.17rem; // 14px
 
 @disclosure-arrow-size: 12px;
 
@@ -76,9 +79,10 @@
 @component-icon-size: 16px;
 @component-line-height: 25px;
 
-@tab-height: 25px;
-@tab-width: 175px;
+@tab-height: 2.1rem; // 25px
+@tab-width: 175px; // TODO: REMOVE
+@tab-min-width: 7rem;
+@tab-max-width: 22rem;
 
 // Misc
 @component-border-radius: 2px;
-@font-family: 'Inconsolata-g for Powerline', Menlo, Consolas;
