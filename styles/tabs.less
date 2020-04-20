@@ -1,9 +1,9 @@
 // Tabs
 
-// TODO: Fix animation issue
 // TODO: Set up preferences to use powerline extra symbols in Nerd Font?
 
 // Hide Project tab -----------------------------------------------------------
+
 .tab {
     &[data-type="TreeView"] {
         display: none;
@@ -11,17 +11,18 @@
 }
 
 // Project-root divider -------------------------------------------------------
+
 .left .atom-dock-mask {
     overflow: visible;
     &:after {
         position: relative;
         display:inline-block;
-        z-index: 1;
+        z-index: 5;
         left:100%;
         color: @green;
         font-family: @nf-font;
         font-size: @nf-arrow-size;
-        transform: @nf-arrow-scale translateX(-0.25rem) translateY(-.65rem);
+        transform: @nf-project-arrow-scale translateX(-0.25rem) translateY(-.65rem);
         content: @nf-right-arrow-solid;
     }
 }
@@ -29,7 +30,6 @@
 // Tab Bar --------------------------------------------------------------------
 
 .tab-bar {
-    // position: relative;  // TODO: REMOVE
     background: @dark-background;
     overflow-x: auto;
     overflow-y: hidden;
@@ -38,353 +38,114 @@
         display: none;
     }
 
-    // Tab ---------------------- ---------------------------------------------
+    // Tab --------------------------------------------------------------------
 
     .tab {
         position: relative;
         padding: 0;
         margin-right: 1em;
-        // height: inherit; // TODO: REMOVE
         font-size: 1rem;
         line-height: @tab-height;
         color: @black;
         background-color: @dark-background;
-        min-width: @tab-width;
-        max-width: @tab-width;
-
-    .title {
-        margin-right:1.5em;
-    }
-
-    &:after {
-        position: absolute;
-        top:0px;
-        left: @tab-width - 3px;
-        font-size: 2.6em;
-        color: @black;
-        font-family: @nf-font;
-        transform:scale(0.75,1.2);
-        content: "\e0b1";
-        // left: @tab-width;
-        // font-size: 1.7em;
-        // color: @black;
-        // content: "";
-    }
-
-    &.active {
-        position: relative;
-        left: -12px;
-        min-width: @tab-width + 14px;
-        max-width: @tab-width + 14px;
-        width: @tab-width + 14px;
-        color: @white;
-        background-color: @black;
-
-        .title {
-            margin-right:.7em;
-        }
-
-        .title.title:before {
-            margin-left: 2em;
-            margin-right: 0.3em;
-        }
+        min-width: @tab-min-width;
+        max-width: @tab-max-width;
+        height: @tab-height;
 
         &:after {
-            position: absolute;
+            position: relative;
+            display: inline-block;
+            top:0;
+            left: 100%;
+            z-index:1;
+            font-size: @nf-arrow-size;
             color: @black;
-            left: @tab-width + 12px;
-            font-size: 2.6em;
-            font-family: "NerdFontsSymbols Nerd Font";
-            transform:scale(0.75,1.2);
-            content: "\e0b0";
-            // top: 0px;
-            // left: @tab-width + 12px;
-            // color: @black;
-            // content: "";
+            font-family: @nf-font;
+            transform: @nf-arrow-end-scale;
+            content: @nf-right-arrow-line;
         }
-
-        &:before {
-            position: absolute;
-            // top:1px;
-            left:-3px;
-            font-size: 2.6em;
-            color: @dark-background;
-            font-family: "NerdFontsSymbols Nerd Font";
-            transform:scale(0.75,1.2);
-            content: "\e0b0";
-            // font-size:1.7em;
-            // content: "";
-        }
-    }
-
-    &:first-of-type {
-        min-width: @tab-width + 12;
-        max-width: @tab-width + 12;
-        width: @tab-width + 12;
-
-        &:after {
-            position: absolute;
-            // left: @tab-width + 12;
-            // color: @black;
-            // content: "";
-            left: @tab-width + 9;
-            font-size: 2.6em;
-            color: @black;
-            font-family: "NerdFontsSymbols Nerd Font";
-            transform:scale(0.75,1.2);
-            content: "\e0b1";
-        }
-
-        // &:before {
-        //     position: absolute;
-        //     color: @green;
-        //     left:-2px;
-        //     font-size: 2.6em;
-        //     font-family: "NerdFontsSymbols Nerd Font";
-        //     transform:scale(0.75,1.2);
-        //     content: "\e0b0";
-        //     // top:-2px;
-        //     // left:-1px;
-        //     // font-size: 3em;
-        //     // font-family: "Octicons Regular";
-        //     // content: "\f05a";
-        //     // font-size: 1.7em;
-        //     // content: "";
-        // }
 
         &.active {
-            position:relative;
-            left:0;
-            min-width: @tab-width + 12;
-            max-width: @tab-width + 12;
-            width: @tab-width + 12;
+            color: @white;
+            background-color: @black;
+
+            .title {
+                position:relative;
+                top:-2.55rem;
+            }
 
             &:after {
-                left: @tab-width + 10;
+                position: relative;
+                display: inline-block;
+                z-index:3;
                 color: @black;
-                font-size: 2.6em;
-                font-family: "NerdFontsSymbols Nerd Font";
-                transform:scale(0.75,1.2);
-                content: "\e0b0";
+                font-size: @nf-arrow-size;
+                font-family: @nf-font;
+                transform: @nf-arrow-scale translateY(-3.6rem) translateX(-0.17rem);
+                content: @nf-right-arrow-solid;
+            }
+
+            &:before {
+                position: relative;
+                display: inline-block;
+                z-index:2;
+                font-size: @nf-arrow-size;
+                color: @dark-background;
+                background-color: @black;
+                font-family: @nf-font;
+                transform: @nf-arrow-scale translateX(-1.45rem);
+                content: @nf-right-arrow-solid;
             }
         }
 
-        .title.title:before {
-            margin-left: 2em;
-            margin-right: 0.5em;
+        &:first-of-type {
+            &:after {
+                position: relative;
+                display: inline-block;
+                left: 100%;
+                z-index:1;
+                font-size: @nf-arrow-size;
+                color: @black;
+                font-family: @nf-font;
+                transform: @nf-arrow-end-scale;
+                content: @nf-right-arrow-line;
+            }
+
+            &.active {
+                position:relative;
+                left:0;
+                &:after {
+                    position: relative;
+                    display: inline-block;
+                    z-index:3;
+                    color: @black;
+                    font-size: @nf-arrow-size;
+                    font-family: @nf-font;
+                    transform: @nf-arrow-scale translateY(-3.6rem) translateX(-0.17rem);
+                    content: @nf-right-arrow-solid;
+                }
+            }
+
+            .title.title:before {
+                margin-left: 1rem;
+            }
+        }
+
+        // Titles & Icons -----------------------------------------------------
+
+        .title {
+            margin-right:1.5em;
+            margin-left: 1em;
+        }
+
+        .close-icon {
+            top:0px;
+            right:0px;
+        }
+
+        &.modified:not(:hover) .close-icon {
+            top:.7em;
+            right:.3em;
         }
     }
-    // &:last-of-type {
-    //   // use box-shadow to not take up any space
-    //   box-shadow: inset 0 -1px 0 @tab-border-color, 1px 0 0 @base-border-color;
-    // }
-    // &.active:last-of-type {
-    //   box-shadow: 1px 0 0 @base-border-color;
-    // }
-
-
-    // Title ----------------------
-
-    // .title {
-    //   text-align: center;
-    //   margin: 0 @title-padding;
-    // }
-
-
-    // Icons ----------------------
-
-    .title.title:before {
-        margin-left: 1em;
-        margin-right: 0.3em;
-        font-size: 1.1em;
-    }
-
-    // Close icon ----------------------
-
-    .close-icon {
-        top:0px;
-        right:0px;
-    }
-
-    &.modified:not(:hover) .close-icon {
-        top:.7em;
-        right:.3em;
-    }
-
-    // .close-icon {
-    //   // top: @icon-padding-top;
-    //   // right: @icon-padding-right;
-    //   z-index: 2;
-    //   font-size: 1em;
-    //   width: 1.5em;
-    //   height: 1.5em;
-    //   line-height: 1.5;
-    //   // border-radius: @component-border-radius;
-    //   // background-color: inherit;
-    //   // overflow: hidden;
-    //   // transform: scale(0);
-    //   // transition: transform .08s;
-    //   &:hover {
-    //     color: @accent-text-color;
-    //     background-color: @accent-color;
-    //   }
-    //   &:active {
-    //     background-color: fade(@accent-color, 50%);
-    //   }
-    //   &::before {
-    //     z-index: 1;
-    //     position: absolute;
-    //     font-size: 1.1em;
-    //     width: inherit;
-    //     height: inherit;
-    //     line-height: inherit;
-    //     text-align: center;
-    //     pointer-events: none;
-    //   }
-    // }
-    // &:hover .close-icon {
-    //   transform: scale(1);
-    //   transition-duration: .16s;
-    // }
-  // }
-
-  // Modified icon ----------------------
-
-  // .tab.modified {
-  //   &:hover .close-icon {
-  //     color: @accent-color;
-  //     &:hover {
-  //       color: @accent-bg-text-color;
-  //     }
-  //   }
-  //   &:not(:hover) .close-icon {
-  //     top: @icon-padding-top;
-  //     right: @icon-padding-right;
-  //     width: 1.5em;
-  //     height: 1.5em;
-  //     line-height: 1.5;
-  //     color: @accent-color;
-  //     border-radius: @component-border-radius;
-  //     border: none;
-  //     transform: scale(1);
-  //     &::before {
-  //       content: "\f052";
-  //       display: inline-block;
-  //     }
-  //   }
-  }
-
-  // Tabs in the docks ----------------------
-
-  atom-dock & {
-    .tab.active {
-      background-color: @black;
-    }
-  }
-
-
-  // Dragging ----------------------
-
-  // .tab.is-dragging {
-  //   opacity: .5;
-  //
-  //   .close-icon,
-  //   &:before {
-  //     visibility: hidden;
-  //   }
-  // }
-  //
-  // .placeholder {
-  //   position: relative;
-  //   pointer-events: none;
-  //
-  //   // bar
-  //   &:before {
-  //     z-index: 1;
-  //     margin: 0;
-  //     width: 2px;
-  //     height: @ui-tab-height;
-  //     background-color: @accent-color;
-  //   }
-  //
-  //   // arrow
-  //   &:after {
-  //     z-index: 0;
-  //     top: @ui-tab-height/2;
-  //     margin: -4px 0 0 -3px;
-  //     border-radius: 0;
-  //     border: 4px solid @accent-color;
-  //     transform: rotate(45deg);
-  //     background: transparent;
-  //   }
-  //
-  //   &:last-child {
-  //     &:before {
-  //       margin-left: -2px;
-  //     }
-  //     &:after {
-  //       transform: none;
-  //       margin-left: -10px;
-  //       border-color: transparent @accent-color transparent transparent;
-  //     }
-  //   }
-  // }
-
-
-  // Overrides ----------------------
-
-  // keep tabs same size when active
-  .tab,
-  .tab.active {
-    // padding-right: 0;
-    .title {
-      // padding: 0;
-    }
-  }
 }
-
-atom-dock.left {
-  .tab-bar {
-    // box-shadow: none;
-
-    .tab {
-      // border: none;
-      &.active:last-of-type {
-        // box-shadow: none;
-      }
-    }
-  }
-}
-
-// Active pane marker --------------
-
-// atom-pane.active .tab.active:before {
-//   content: "";
-//   position: absolute;
-//   pointer-events: none;
-//   z-index: 2;
-//   top: 0;
-//   left: -1px; // cover left border
-//   bottom: 0;
-//   width: 2px;
-//   background: @accent-color;
-// }
-//
-// // hide marker in docks
-// atom-dock .tab-bar .tab::before {
-//   display: none;
-// }
-
-
-// Custom tabs --------------
-
-// .tab-bar .tab.active {
-//   &[data-type$="Editor"],
-//   &[data-type$="AboutView"],
-//   &[data-type$="TimecopView"],
-//   &[data-type$="StyleguideView"],
-//   &[data-type="MarkdownPreviewView"] {
-//     color: @tab-text-color-editor;
-//     background-color: @tab-background-color-editor; // Match syntax background color
-//   }
-// }
