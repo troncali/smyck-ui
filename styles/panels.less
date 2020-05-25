@@ -1,12 +1,47 @@
 .status-bar {
     color: @black;
     background-color: @dark-background;
+    height: @component-line-height;
+    vertical-align: middle;
+    font-size:.9rem;
 }
 
 // TODO: Better way to style and reduce width of gutter but still keep
 // collapseable line numbers?
 
 // TODO: split package styling into separate folder/files.
+
+// PLATFORMIO IDE STYLES
+
+.platformio-ide-terminal {
+    &.status-bar {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+
+        .status-container {
+            width: auto;
+            height: auto;
+            top:50%;
+            transform: translateY(-50%);
+        }
+
+        .icon.icon-plus, .icon.icon-x {
+            margin-top:.1rem;
+            position: relative;
+            top:50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+// LINTER STYLES
+
+.status-bar {
+    .linter-status-count {
+        margin-top:.1rem;
+    }
+}
 
 .gutter[gutter-name="linter-ui-default"] {
     .linter-row {

@@ -12,55 +12,59 @@
 }
 
 .tree-view {
-    & .tree-view-root {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
+    .tree-view-root {
+        padding-left: 0px;
+        padding-right: 0px;
 
-    // Line to left of tree items
-    .list-item + .list-tree {
-        color: @dark-white;
-        position: relative;
+        // Line to left of tree items
+        .list-item + .list-tree {
+            color: @dark-white;
+            position: relative;
 
-        .selected {
+            .selected {
+                &:before {
+                  margin-left:4px;
+                }
+            }
+
+            .icon-file-directory &:before {
+                top:0;
+                left:5px
+            }
+
             &:before {
-                margin-left:4px;
+                content: '';
+                position: absolute;
+                // margin-left:4px;
+                min-width: 1px;
+                display: block;
+                top: 0;
+                bottom: 0;
+                left: 0.5em;
+                background: @dark-background;
             }
         }
 
-        .icon-file-directory &:before {
-            top:0;
-            left:5px
+        .list-tree {
+            padding-left: 0.5em;
         }
 
-        &:before {
-            content: '';
-            position: absolute;
-            // margin-left:4px;
-            min-width: 1px;
-            display: block;
-            top: 0;
-            bottom: 0;
-            left: 0.5em;
-            background: @dark-background;
-        }
-    }
+        // Dots to left of tree items
+        .list-item.file.entry {
+            transition: .2s ease-in;
 
-    // Dots to left of tree items
-    .list-item.file.entry {
-        transition: .2s ease-in;
-
-        &:after {
-            opacity: .26;
-            font-family: "Octicons Regular";
-            content: "\f052";
-            position: relative;
-            font-size: 4px;
-            float: left;
-            top: 0;
-            left: -12.5px;
-            width: 6px;
-            margin-right: -8px;
+            &:after {
+                opacity: .26;
+                font-family: "Octicons Regular";
+                content: "\f052";
+                position: relative;
+                font-size: 4px;
+                float: left;
+                top: 0;
+                left: -12.5px;
+                width: 6px;
+                margin-right: -8px;
+            }
         }
     }
 }
@@ -69,8 +73,4 @@
     background: @green;
     color: @background;
     padding-left:0.5em;
-}
-
-.list-tree {
-    padding-left: 0.5em;
 }
