@@ -1,0 +1,76 @@
+// Buttons -----------------------
+
+@btn-border: 1px solid @button-border-color; //@button-border-color;
+@btn-padding: 0 @component-padding;
+
+.btn {
+  height: @component-line-height;
+  padding: @btn-padding;
+  font-size: @font-size;
+  line-height: @component-line-height;
+}
+
+// Button Sizes -----------------------
+
+.btn.btn-xs,
+.btn-group-xs > .btn {
+  font-size: @font-size*.8;
+  line-height: @component-line-height;
+  padding: @btn-padding;
+}
+.btn.btn-sm,
+.btn-group-sm > .btn {
+  font-size: @font-size*.9;
+  line-height: @component-line-height;
+  padding: @btn-padding;
+}
+.btn.btn-lg,
+.btn-group-lg > .btn {
+  font-size: @font-size * 1.5;
+  line-height: @component-line-height;
+  padding: @btn-padding;
+}
+
+
+// Button Group -----------------------
+
+.btn-group > .btn {
+  z-index: 0;
+  &:hover {
+    z-index: 0;
+  }
+  &.btn:focus {
+    z-index: 1;
+    // .focus();
+  }
+
+  &:first-child {
+    border-left: @btn-border;
+  }
+  &:last-child,
+  &.selected:last-child {
+    border-right: @btn-border;
+  }
+
+  &.selected:focus {
+    border-color: @button-background-color-selected;
+    // box-shadow: inset 0 0 0 1px fade(@base-border-color, 50%), 0 0 0 1px @button-background-color-selected;
+  }
+}
+
+
+// Button Icons -----------------------
+
+.btn.icon:before {
+  line-height: inherit;
+  vertical-align: top;
+}
+
+
+// Dropdowns
+
+.form-control {
+  height: @component-line-height;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,.12);
+}
