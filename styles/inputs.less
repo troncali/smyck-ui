@@ -1,0 +1,34 @@
+
+
+// Input fields
+
+atom-text-editor[mini] {
+  max-height: @component-line-height * 5; // rows
+  padding-left: @component-padding;
+  box-shadow: inset 0 2px 1px rgba(0,0,0,.12);
+  border-radius: @component-border-radius;
+  color: @text-color-highlight;
+  border: 1px solid @dark-background;
+  background-color: @dark-background;
+
+  .placeholder-text {
+    color: @text-color-subtle;
+  }
+
+  .selection .region {
+    background-color: @dark-cyan;
+  }
+
+  .cursor {
+    border-color: @dark-cyan;
+    border-width: 2px;
+  }
+
+  &.is-focused {
+    border: 1px solid @dark-cyan;
+    background-color: @dark-background;
+    .selection .region {
+      background-color: @dark-cyan;
+    }
+  }
+}
