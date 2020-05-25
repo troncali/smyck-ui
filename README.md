@@ -2,13 +2,12 @@
 
 Vim-Powerline styled [Atom](https://atom.io) UI theme using the [SMYCK color scheme](http://color.smyck.org).  
 
-Initial release and work in progress.  Not yet polished for all interface elements.  
-
 Feedback, suggestions, problems welcome: [create a new issue](https://github.com/troncali/smyck-ui/issues/new).
 
-#### v0.1.2 Updates
-* Fixed tab divider and close icon issues; restructured for variable-width tabs.
-* Minor tweaks to git and linter gutter styles.
+#### v0.1.3 Updates
+* Fixed scrollbar on tab bars.
+* Fixed button and input styles.
+* Fixed alignment of first item in popover lists (like autocomplete). 
 
 ## Installation
 ```bash
