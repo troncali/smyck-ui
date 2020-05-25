@@ -1,0 +1,15 @@
+.select-list ol.list-group,
+&.select-list ol.list-group {
+    // We want to highlight the background of the list items because we dont
+    // know their size.
+    li.selected {
+        background-color: @background-color-selected;
+        &:before { display: none; }
+    }
+}
+
+.autocomplete-suggestion-list {
+    .suggestion-description-content {
+        font-size: 1rem!important;
+    }
+}
