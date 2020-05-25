@@ -1,7 +1,9 @@
 .tooltip {
     white-space: nowrap;
+    font-size:1rem;
 
     &.in {
+        opacity:1;
         transition: opacity .12s ease-out;
     }
 
@@ -18,7 +20,7 @@
     box-shadow: none;
 
     .datatip-container {
-        font-size:10px;
+        font-size:.83rem; // 10px
         background-color: @black;
         padding: 1em;
 
@@ -27,16 +29,16 @@
         }
 
         .datatip-marked-text-editor-container .scroll-view {
-            font-size: 10px !important;
+            font-size: .83rem !important;
         }
 
         .atom-typescript-datatip-tooltip-code {
-            font-size: 12px;
+            font-size: 1rem; // 12px
             padding-bottom: 1em;
         }
 
         .atom-typescript-datatip-tooltip-doc-tag {
-            font-size: 10px;
+            font-size: .83rem;
             color: @dark-white;
 
             &:first-child {
